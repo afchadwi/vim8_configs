@@ -16,6 +16,8 @@ set nocompatible
 "  -> majutsushi/tagbar
 "  -> mbbill/undotree
 "  -> airblad/vim-gitgutter
+"  -> gregsexton/gitv
+"  -> tpope/vim-fugitive
 
 " --------------------
 "  OLD VUNDLE PLUGINS
