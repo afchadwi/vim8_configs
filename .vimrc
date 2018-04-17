@@ -20,31 +20,7 @@ set nocompatible
 "  -> tpope/vim-fugitive
 
 " --------------------
-"  OLD VUNDLE PLUGINS
-"Plugin 'scrooloose/nerdtree'
-"Plugin 'MattesGroeger/vim-bookmarks'
-"Plugin 'scrooloose/syntastic'
-"Plugin 'nathanaelkane/vim-indent-guides'
-"Plugin 'vim-airline/vim-airline'
-"Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'LaTeX-Box-Team/LaTeX-Box'
-"Bundle 'majutsushi/tagbar'
-"Plugin 'tpope/vim-fugitive'
-"Plugin 'mbbill/undotree'
-"Plugin 'Shougo/unite.vim'
-"Plugin 'airblade/vim-gitgutter'
-"Plugin 'gregsexton/gitv'
-
-" Colorschemes
-"Plugin 'altercation/vim-colors-solarized'
-"Plugin 'tomasr/molokai'
-"Plugin 'nanotech/jellybeans.vim'
-"Plugin 'flazz/vim-colorschemes'
-"Plugin 'shaond/vim-guru'
-"Plugin 'NLKNguyen/papercolor-theme'
-"Plugin 'chriskempson/base16-vim'
-
-
+"  Basic configurations
 filetype on
 filetype indent on
 filetype plugin on
@@ -71,51 +47,44 @@ set expandtab
 set hlsearch
 set incsearch
 set tw=0
-
-"set lines=60
-"set columns=160
-
+set noswapfile
 set history=1000
 set undolevels=1000
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set visualbell
 set noerrorbells
-
 set nobackup
 
 let fortran_do_enddo=1
 
-" Plugin config
-set laststatus=2
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 0
-if !exists('g:airline_symbols')
-	let g:airline_symbols = {}
+" --------------------
+"  Graphics configuration
+" Speed up vim graphics a bit
+set lazyredraw
+set ttyfast
+
+" Disable background colors
+if &term =~ '256color'
+  set t_ut=
 endif
-let g:airline_symbols.space = "\ua0"
 
-"let g:nerdtree_tabs_open_on_console_startup = 1
-"Toggle for NERDTree
-"map <F5> :NERDTreeToggle<CR>
-"Toggle for Tagbar
-nmap <F8> :TagbarToggle<CR>
-"Toggles to cycle open buffers
-map <F9> :bnext<CR>
-map <F7> :bprevious<CR>
-"Toggle for paste mode
-set pastetoggle=<F2>
-"Toggle for line numbers
-nnoremap <F4> :set nonumber!<CR>
-"Toggle for UndoTree
-nnoremap <F6> :UndotreeToggle<CR>
-"Toggle key to highlight lines past 132 characters
-nnoremap <F3> :/\%>132v.\+<CR>
-"Toggle key to clear all highlighting and the search pattern
-nnoremap <M-F3> :let @/ = ""<CR>
+" --------------------
+"  Color scheme settings
+colorscheme gruvbox
+set background=dark
+let g:gruvbox_contrast_dark = 'hard'
 
-" Fix behavior of home key (go to bol, not first column, but go to first column if at bol)
-"map <Home> ^
-"imap <Home> <Esc>0I
+" --------------------
+" Enable mouse support
+set mouse+=a
+if &term =~ '^screen'
+  " tmux knows the extended mouse mode
+  set ttymouse=xterm2
+endif
+
+" --------------------
+"  Define settings for "smart" home key function. Goes to bol on first press,
+"  otherwise it goes to the first column
 function ExtendedHome()
 	let column = col('.')
 	normal! ^
@@ -126,36 +95,67 @@ endfunction
 noremap <silent> <Home> :call ExtendedHome()<CR>
 inoremap <silent> <Home> <C-O>:call ExtendedHome()<CR>
 
+" --------------------
+"  Configuratioin for netrw
 
-colorscheme gruvbox
-set background=dark
-let g:gruvbox_contrast_dark = 'hard'
+" Toggle for netrw as a vertical split
+map <F5> :Lexplore<CR>
 
-" Enable mouse support
-set mouse+=a
-if &term =~ '^screen'
-  " tmux knows the extended mouse mode
-  set ttymouse=xterm2
+" Disable the netrw banner
+let g:netrw_banner=0
+" Open new buffers in previous window
+let g:netrw_browse_split=4
+" Set the column width
+let g:netrw_winsize=20
+" List style
+let g:netrw_liststyle=3
+" Other settings
+let g:netrw_altv=1
+
+" --------------------
+"  Configure keys for convenience toggles
+
+"Toggle for Tagbar
+nmap <F8> :TagbarToggle<CR>
+
+"Toggles to cycle open buffers
+map <F9> :bnext<CR>
+map <F7> :bprevious<CR>
+
+"Toggle for paste mode
+set pastetoggle=<F2>
+
+"Toggle for line numbers
+nnoremap <F4> :set nonumber!<CR>
+
+"Toggle for UndoTree
+nnoremap <F6> :UndotreeToggle<CR>
+
+"Toggle key to highlight lines past 132 characters
+nnoremap <F3> :/\%>132v.\+<CR>
+
+"Toggle key to clear all highlighting and the search pattern
+nnoremap <M-F3> :let @/ = ""<CR>
+
+" --------------------
+" Airline configuration
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 0
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
 endif
-
-set guifont=Monaco:h10
-
-""""""""""""""""""""""""""""""
-" airline
-""""""""""""""""""""""""""""""
+let g:airline_symbols.space = "\ua0"
 let g:airline_theme             = 'gruvbox'
 let g:airline_enable_branch     = 1
-"let g:airline_enable_syntastic  = 0
 
-
+" --------------------
 " Configure GitGutter
 let g:gitgutter_max_signs=16000
 
-" Speed up vim graphics a bit
-set lazyredraw
-set ttyfast
-
-" Disable background colors
-if &term =~ '256color'
-  set t_ut=
-endif
+" --------------------
+"  Setup to have vimrc automatically reload on changes
+augroup myvimrc
+    au!
+    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+augroup END
