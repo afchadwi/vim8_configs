@@ -55,6 +55,11 @@ set visualbell
 set noerrorbells
 set nobackup
 
+" --------------------
+"  GUI configurations
+set guioptions=
+set guifont=Fira\ Mono\ for\ Powerline:h11
+
 let fortran_do_enddo=1
 
 " --------------------
@@ -141,7 +146,7 @@ nnoremap <M-F3> :let @/ = ""<CR>
 " Airline configuration
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
