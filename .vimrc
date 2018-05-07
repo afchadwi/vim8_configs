@@ -58,7 +58,7 @@ set nobackup
 " --------------------
 "  GUI configurations
 set guioptions=
-set guifont=Fira\ Mono\ for\ Powerline:h11
+set guifont=Fira\ Mono\ Medium\ for\ Powerline:h12
 
 let fortran_do_enddo=1
 
