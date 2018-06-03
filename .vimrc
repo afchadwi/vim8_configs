@@ -104,18 +104,18 @@ inoremap <silent> <Home> <C-O>:call ExtendedHome()<CR>
 "  Configuratioin for netrw
 
 " Toggle for netrw as a vertical split
-map <F5> :Lexplore<CR>
+"map <F5> :Lexplore<CR>
 
 " Disable the netrw banner
-let g:netrw_banner=0
+"let g:netrw_banner=0
 " Open new buffers in previous window
-let g:netrw_browse_split=4
+"let g:netrw_browse_split=4
 " Set the column width
-let g:netrw_winsize=20
+"let g:netrw_winsize=20
 " List style
-let g:netrw_liststyle=3
+"let g:netrw_liststyle=3
 " Other settings
-let g:netrw_altv=1
+"let g:netrw_altv=1
 
 " --------------------
 "  Configure keys for convenience toggles
