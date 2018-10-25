@@ -4,8 +4,6 @@
 " Alex Chadwick
 " afchadwi@umich.edu
 
-set ttymouse=xterm2
-
 set nocompatible
 
 " --------------------
@@ -69,15 +67,15 @@ set lazyredraw
 set ttyfast
 
 " Disable background colors
-if &term =~ '256color'
-  set t_ut=
-endif
+"if &term =~ '256color'
+"  set t_ut=
+"endif
+set t_ut=
 
 " --------------------
 "  Color scheme settings
-colorscheme gruvbox
-set background=dark
-let g:gruvbox_contrast_dark = 'hard'
+colorscheme one
+set background=light
 
 " --------------------
 " Enable mouse support
@@ -151,7 +149,7 @@ if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
 let g:airline_symbols.space = "\ua0"
-let g:airline_theme             = 'gruvbox'
+let g:airline_theme             = 'one'
 let g:airline_enable_branch     = 1
 
 " --------------------
