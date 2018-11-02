@@ -28,3 +28,6 @@
 [submodule "pack/my-plugins/start/vim-filebeagle"]
 	path = pack/my-plugins/start/vim-filebeagle
 	url = https://github.com/jeetsukumaran/vim-filebeagle.git
+[submodule "pack/my-plugins/start/vim-one"]
+	path = pack/my-plugins/start/vim-one
+	url = https://github.com/rakr/vim-one.git
