@@ -1,33 +1,33 @@
 [submodule "pack/my-plugins/start/undotree"]
-	path = pack/my-plugins/start/undotree
+	path = vim8-full/pack/my-plugins/start/undotree
 	url = git@github.com:mbbill/undotree.git
 [submodule "pack/my-plugins/start/vim-gitgutter"]
-	path = pack/my-plugins/start/vim-gitgutter
+	path = vim8-full/pack/my-plugins/start/vim-gitgutter
 	url = git@github.com:airblade/vim-gitgutter.git
 [submodule "pack/my-plugins/start/tagbar"]
-	path = pack/my-plugins/start/tagbar
+	path = vim8-full/pack/my-plugins/start/tagbar
 	url = git@github.com:majutsushi/tagbar.git
 [submodule "pack/my-plugins/start/vim-airline"]
-	path = pack/my-plugins/start/vim-airline
+	path = vim8-full/pack/my-plugins/start/vim-airline
 	url = git@github.com:vim-airline/vim-airline.git
 [submodule "pack/my-plugins/start/vim-airline-themes"]
-	path = pack/my-plugins/start/vim-airline-themes
+	path = vim8-full/pack/my-plugins/start/vim-airline-themes
 	url = git@github.com:vim-airline/vim-airline-themes.git
 [submodule "pack/my-plugins/start/gruvbox"]
-	path = pack/my-plugins/start/gruvbox
+	path = vim8-full/pack/my-plugins/start/gruvbox
 	url = git@github.com:morhetz/gruvbox.git
 [submodule "pack/my-plugins/start/gitv"]
-	path = pack/my-plugins/start/gitv
+	path = vim8-full/pack/my-plugins/start/gitv
 	url = git@github.com:gregsexton/gitv.git
 [submodule "pack/my-plugins/start/vim-fugitive"]
-	path = pack/my-plugins/start/vim-fugitive
+	path = vim8-full/pack/my-plugins/start/vim-fugitive
 	url = git@github.com:tpope/vim-fugitive.git
 [submodule "pack/my-plugins/start/vim-vinegar"]
 	path = pack/my-plugins/start/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar.git
 [submodule "pack/my-plugins/start/vim-filebeagle"]
-	path = pack/my-plugins/start/vim-filebeagle
+	path = vim8-full/pack/my-plugins/start/vim-filebeagle
 	url = https://github.com/jeetsukumaran/vim-filebeagle.git
 [submodule "pack/my-plugins/start/vim-one"]
-	path = pack/my-plugins/start/vim-one
+	path = vim8-full/pack/my-plugins/start/vim-one
 	url = https://github.com/rakr/vim-one.git
