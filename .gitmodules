@@ -31,3 +31,9 @@
 [submodule "pack/my-plugins/start/vim-one"]
 	path = vim8-full/pack/my-plugins/start/vim-one
 	url = https://github.com/rakr/vim-one.git
+[submodule "pack/themes/vim-solarized8"]
+	path = pack/themes/vim-solarized8
+	url = https://github.com/lifepillar/vim-solarized8.git
+[submodule "pack/themes/opt/vim-solarized8"]
+	path = pack/themes/opt/vim-solarized8
+	url = https://github.com/lifepillar/vim-solarized8.git

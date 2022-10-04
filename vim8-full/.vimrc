@@ -16,6 +16,9 @@ set nocompatible
 "  -> airblad/vim-gitgutter
 "  -> gregsexton/gitv
 "  -> tpope/vim-fugitive
+"
+"  Themes:
+"  -> lifepillar/vim-solarized8
 
 " --------------------
 "  Basic configurations
@@ -74,8 +77,9 @@ set t_ut=
 
 " --------------------
 "  Color scheme settings
-colorscheme one
-set background=light
+colorscheme solarized8_flat
+"colorscheme one
+set background=dark
 
 " --------------------
 " Enable mouse support
@@ -149,7 +153,7 @@ if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
 let g:airline_symbols.space = "\ua0"
-let g:airline_theme             = 'one'
+"let g:airline_theme             = 'one'
 let g:airline_enable_branch     = 1
 
 " --------------------
